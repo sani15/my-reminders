@@ -2,23 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="icon.png"> <link rel="manifest" href="manifest.json">
+    <title>FocusFlow</title>
     <link rel="stylesheet" href="style.css">
-    <title>My Tasks</title>
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
+    <div class="background-blobs"></div>
+    
     <div class="app-container">
-        <h1>My Tasks</h1>
-        <div class="input-group">
-            <input type="text" id="taskInput" placeholder="What needs doing?">
-            <input type="datetime-local" id="taskTime">
-            <button onclick="addTask()">Add Task</button>
+        <header>
+            <div class="date-header" id="currentDate">Friday, April 17</div>
+            <h1>Today's Focus</h1>
+        </header>
+
+        <div class="input-card">
+            <input type="text" id="taskInput" placeholder="What's the next goal?">
+            <div class="input-row">
+                <input type="datetime-local" id="taskTime">
+                <button onclick="addTask()" id="addBtn">Add</button>
+            </div>
         </div>
+
+        <div class="stats-row">
+            <div class="stat-item"><span id="taskCount">0</span><span>Pending</span></div>
+            <div class="stat-item"><span id="completedCount">0</span><span>Done</span></div>
+        </div>
+
         <ul id="taskList"></ul>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
